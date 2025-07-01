@@ -8,7 +8,6 @@ WeatherCast is a modern weather forecasting application built with Nuxt.js. It p
 
 - Real-time weather data display
 - Location-based weather forecasting
-- Daily and hourly weather predictions
 - Temperature, humidity, wind speed, and precipitation information
 - Responsive design for all devices
 
