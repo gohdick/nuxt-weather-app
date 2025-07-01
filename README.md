@@ -1,6 +1,16 @@
-# Nuxt Minimal Starter
+# WeatherCast App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![WeatherCast App Screenshot](/public/weathercast.png)
+
+WeatherCast is a modern weather forecasting application built with Nuxt.js. It provides users with real-time weather information, forecasts, and weather-related data in a clean, intuitive interface.
+
+## Features
+
+- Real-time weather data display
+- Location-based weather forecasting
+- Daily and hourly weather predictions
+- Temperature, humidity, wind speed, and precipitation information
+- Responsive design for all devices
 
 ## Setup
 
