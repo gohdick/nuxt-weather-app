@@ -51,7 +51,7 @@
             @keyup.enter="fetchWeatherByCity"
             @input="handleInputChange"
             class="w-full p-4 pl-12 pr-12 rounded-xl border-0 bg-white/80 dark:bg-blue-800/40 backdrop-blur-md text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-blue-300 transition-all duration-300"
-            placeholder="พิมพ์ชื่อเมือง เช่น Bangkok"
+            placeholder="พิมพ์ชื่อเมือง เช่น กรุงเทพ, เชียงใหม่"
           />
           <button 
             @click="fetchWeatherByCity" 
@@ -219,8 +219,9 @@
           </div>
           
           <!-- Last Updated -->
-          <div class="text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
-            อัพเดตล่าสุด: {{ getLastUpdated() }}
+           
+          <div class="text-center mt-4 text-sm text-white dark:text-white">
+            อัพเดตล่าสุด: {{ getLastUpdated() }}  {{ getCurrentDate() }}
           </div>
         </div>
       </div>
@@ -326,7 +327,9 @@ const fetchWeatherByCity = async () => {
   try {
     loadingLocation.value = true
     error.value = null // Clear previous errors
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric&appid=${API_KEY}&lang=th`)
+    // เข้ารหัส URL เพื่อรองรับภาษาไทย
+    const encodedCity = encodeURIComponent(city.value.trim())
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&appid=${API_KEY}&lang=th`)
     if (!res.ok) {
       if (res.status === 404) {
         throw new Error('ไม่พบเมืองนี้ กรุณาตรวจสอบชื่อเมืองอีกครั้ง')
