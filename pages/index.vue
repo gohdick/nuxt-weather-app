@@ -1,5 +1,5 @@
 <template>
-  <div :class="['min-h-screen flex flex-col items-center justify-start py-10 px-4 bg-gradient-to-br', isDarkMode ? 'from-gray-900 via-dark-blue-800 to-blue-700' : 'from-blue-500 via-blue-400 to-blue-300']">
+  <div :class="['min-h-screen flex flex-col items-center justify-start py-10 px-4 bg-gradient-to-br', isDarkMode ? 'from-gray-900 via-dark-blue-800 to-blue-900' : 'from-blue-500 via-blue-400 to-white-600']">
     <!-- Theme Toggle -->
     <div class="absolute top-4 right-4 z-10">
       <button @click="toggleTheme" class="p-2 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all duration-300 shadow-lg">
@@ -245,6 +245,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
+import { useRuntimeConfig } from '#app'
 
 const city = ref('')
 const weather = ref(null)
@@ -253,7 +254,8 @@ const loadingLocation = ref(false)
 const userCoords = ref(null)
 const isDarkMode = ref(false)
 
-const API_KEY = '939b38bfd0a7eb21b24aee41b261cfd0' 
+const runtimeConfig = useRuntimeConfig()
+const API_KEY = runtimeConfig.public.apiKey
 
 // Get current formatted date
 const getCurrentDate = () => {
