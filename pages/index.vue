@@ -128,11 +128,6 @@ onMounted(() => {
 
 <style scoped>
 /* Custom styles for the weather app */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-* {
-  font-family: 'Poppins', sans-serif;
-}
 
 .weather-icon img {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
@@ -146,9 +141,9 @@ onMounted(() => {
 }
 
 /* Responsive adjustments */
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
   .text-5xl {
     font-size: 2.5rem;
   }
-}
+} */
 </style>

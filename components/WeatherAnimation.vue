@@ -37,13 +37,36 @@
 
     <!-- Clouds animation -->
     <div v-if="animationType === 'weather-clouds'" class="clouds-container">
-      <div v-for="i in 5" :key="i" class="cloud" :style="{ 
+      <!-- Main clouds layer -->
+      <div v-for="i in 6" :key="i" class="cloud main-cloud" :style="{ 
         left: `${-20 + Math.random() * 120}%`, 
         top: `${5 + Math.random() * 20}%`,
-        opacity: 0.4 + Math.random() * 0.3,
-        transform: `scale(${0.6 + Math.random() * 0.8})`,
+        opacity: 0.7 + Math.random() * 0.2,
+        transform: `scale(${0.5 + Math.random() * 0.5})`,
         animationDuration: `${60 + Math.random() * 40}s`,
-        animationDelay: `${Math.random() * 60}s`
+        animationDelay: `${Math.random() * 30}s`,
+        filter: `blur(${0.5 + Math.random() * 0.5}px)`
+      }"></div>
+      
+      <!-- Background clouds layer -->
+      <div v-for="i in 4" :key="i + 'bg'" class="cloud bg-cloud" :style="{ 
+        left: `${-20 + Math.random() * 120}%`, 
+        top: `${15 + Math.random() * 15}%`,
+        opacity: 0.3 + Math.random() * 0.2,
+        transform: `scale(${0.7 + Math.random() * 0.6})`,
+        animationDuration: `${80 + Math.random() * 40}s`,
+        animationDelay: `${Math.random() * 20}s`,
+        filter: `blur(${1 + Math.random() * 2}px)`
+      }"></div>
+      
+      <!-- Small detail clouds -->
+      <div v-for="i in 5" :key="i + 'sm'" class="small-cloud" :style="{ 
+        left: `${-10 + Math.random() * 110}%`, 
+        top: `${5 + Math.random() * 30}%`,
+        opacity: 0.6 + Math.random() * 0.3,
+        transform: `scale(${0.3 + Math.random() * 0.3})`,
+        animationDuration: `${50 + Math.random() * 30}s`,
+        animationDelay: `${Math.random() * 25}s`
       }"></div>
     </div>
 
@@ -271,20 +294,23 @@ const startThunderAnimation = () => {
   height: 100%;
 }
 
+/* Main cloud styles */
 .cloud {
   position: absolute;
   width: 180px;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50px;
   animation: cloud-drift linear infinite;
+  box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.3);
 }
 
 .cloud:before, .cloud:after {
   content: '';
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
+  box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.3);
 }
 
 .cloud:before {
@@ -299,6 +325,48 @@ const startThunderAnimation = () => {
   height: 100px;
   top: -50px;
   right: 25px;
+}
+
+/* Background cloud variation */
+.bg-cloud {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.bg-cloud:before, .bg-cloud:after {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Small cloud style */
+.small-cloud {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
+  animation: cloud-drift linear infinite;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+}
+
+.small-cloud:before, .small-cloud:after {
+  content: '';
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.3);
+}
+
+.small-cloud:before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 15px;
+}
+
+.small-cloud:after {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  right: 15px;
 }
 
 @keyframes cloud-drift {

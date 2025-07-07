@@ -136,6 +136,9 @@
         </div>
       </div>
       
+      <!-- Weather Insights Section -->
+      <WeatherInsights :weather="weather" />
+      
       <!-- Last Updated -->
       <div class="text-center mt-4 text-sm text-white-700 dark:text-white-700">
         อัพเดตล่าสุด: {{ getLastUpdated() }}  {{ getCurrentDate() }}
@@ -146,6 +149,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
+import WeatherInsights from './WeatherInsights.vue'
 
 const props = defineProps({
   weather: {
