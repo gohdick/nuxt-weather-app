@@ -2,18 +2,20 @@
 
 ![WeatherCast App Screenshot](/public/weathercast.png)
 
-WeatherCast is a modern weather forecasting application built with Nuxt.js. It provides users with real-time weather information, forecasts, and weather-related data in a clean, intuitive interface.
+WeatherCast เป็นแอปพลิเคชันพยากรณ์อากาศสมัยใหม่ที่สร้างด้วย Nuxt.js โดยให้ข้อมูลสภาพอากาศแบบเรียลไทม์ การพยากรณ์ และข้อมูลที่เกี่ยวข้องกับสภาพอากาศแก่ผู้ใช้ ผ่านอินเทอร์เฟซที่สะอาดและใช้งานง่าย
 
 ## Features
 
-- Real-time weather data display
-- Location-based weather forecasting
-- Temperature, humidity, wind speed, and precipitation information
-- Responsive design for all devices
+- แสดงข้อมูลสภาพอากาศแบบเรียลไทม์
+- ข้อมูลพยากรณ์อากาศตามสถานที่
+- ข้อมูลอุณหภูมิ, ความชื้น, ความเร็วของลม, และความกดอากาศ
+- แสดงสถานะตำแหน่งของคุณ
+- มีคำแนะนำเกี่ยวกับสภาพอากาศ กิจกรรม และการแต่งกาย
+- ออกแบบที่ตอบสนองสำหรับอุปกรณ์ทุกประเภท
 
 ## Setup
 
-Make sure to install dependencies:
+ติดตั้งข้อมูลที่จำเป็น:
 
 ```bash
 # npm
@@ -31,7 +33,7 @@ bun install
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+เริ่มต้นเซิร์ฟเวอร์พัฒนาที่ `http://localhost:3000`:
 
 ```bash
 # npm
@@ -45,40 +47,3 @@ yarn dev
 
 # bun
 bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
