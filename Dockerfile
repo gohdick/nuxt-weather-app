@@ -31,7 +31,7 @@ COPY --from=build /app/node_modules ./node_modules
 ENV NODE_ENV=production
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
-ENV API_KEY=939b38bfd0a7eb21b24aee41b261cfd0
+ENV OPENWEATHER_API_KEY=939b38bfd0a7eb21b24aee41b261cfd0
 
 # Expose the port the app will run on
 EXPOSE 3000
