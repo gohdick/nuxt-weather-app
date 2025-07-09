@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+npm-debug.log
+
+# Build output
+.nuxt
+.output
+dist
+
+# Git
+.git
+.github
+.gitignore
+
+# Environment variables
+.env
+.env.*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -12,6 +12,7 @@ export const useWeather = () => {
       loading.value = true
       error.value = null
       const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}&lang=th`)
+      // console.log(res)
       
       if (!res.ok) {
         if (res.status === 404) {
@@ -38,6 +39,7 @@ export const useWeather = () => {
       loading.value = true
       error.value = null
       const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}&lang=th`)
+      // console.log(res)
       
       if (!res.ok) {
         throw new Error('ไม่สามารถโหลดข้อมูลจากตำแหน่งปัจจุบันได้')
