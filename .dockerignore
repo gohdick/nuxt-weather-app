@@ -13,8 +13,8 @@ dist
 .gitignore
 
 # Environment variables
-.env
-.env.*
+# .env
+# .env.*
 
 # Editor directories and files
 .idea
